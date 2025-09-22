@@ -12,7 +12,7 @@ with v as (
         when duration_seconds < 3600 then '30-60m'
         else '60m+'
       end) as "DURATION_BUCKET"
-  from YOUTUBE_DB.YOUTUBE_DEV_SCHEMA.STG_VIDEOS
+  from {{ ref('stg_videos') }}
   group by video_id
 )
 select

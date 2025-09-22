@@ -10,7 +10,7 @@ with v as (
     , any_value(view_count)         as "VIEW_COUNT"
     , any_value(like_count)         as "LIKE_COUNT"
     , any_value(comment_count)      as "COMMENT_COUNT"
-  from YOUTUBE_DB.YOUTUBE_DEV_SCHEMA.STG_VIDEOS
+  from {{ ref('stg_videos') }}
   where video_title is not null
   group by video_id
 )

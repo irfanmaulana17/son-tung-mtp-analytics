@@ -7,7 +7,7 @@ with v as (
     , any_value(like_count)    as "LIKE_COUNT"
     , any_value(comment_count) as "COMMENT_COUNT"
     , any_value("VIDEO_TYPE")  as "VIDEO_TYPE"
-  from YOUTUBE_DB.YOUTUBE_DEV_SCHEMA.STG_VIDEOS
+  from {{ ref('stg_videos') }}
   group by video_id
 )
 select
