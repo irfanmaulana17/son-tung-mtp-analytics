@@ -1,0 +1,60 @@
+[0m17:16:27.781238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1f04055220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1f0282da00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1f026e8a00>]}
+
+
+============================== 17:16:27.783630 | ed98c2e5-18d5-4bfc-956b-79fde941ffae ==============================
+[0m17:16:27.783630 [info ] [MainThread]: Running with dbt=1.8.7
+[0m17:16:27.784137 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/tunguyenn99/.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt init dbt_youtube', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:27.798839 [debug] [MainThread]: Starter project path: /home/tunguyenn99/.local/lib/python3.8/site-packages/dbt/include/starter_project
+[0m17:16:27.805486 [info ] [MainThread]: 
+Your new dbt project "dbt_youtube" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:16:27.805906 [info ] [MainThread]: Setting up your profile.
+[0m17:16:34.713007 [error] [MainThread]: Encountered an error:
+
+[0m17:16:34.719270 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/dbt/task/init.py", line 262, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/dbt/task/init.py", line 243, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/home/tunguyenn99/.local/lib/python3.8/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m17:16:34.721021 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 7.0035615, "process_user_time": 1.00097, "process_kernel_time": 0.093067, "process_mem_max_rss": "92204", "process_in_blocks": "52632", "process_out_blocks": "72", "command_success": false}
+[0m17:16:34.721436 [debug] [MainThread]: Command `dbt init` failed at 17:16:34.721352 after 7.00 seconds
+[0m17:16:34.721729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1f04055220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1f04bfea60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1f02616be0>]}
+[0m17:16:34.722033 [debug] [MainThread]: Flushing usage events
+[0m17:16:57.337100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0dc11ad2e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0dbf97c910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0dbf97c850>]}
+
+
+============================== 17:16:57.339644 | 0ec00b4a-9923-4c67-8ee5-97030fdbb71f ==============================
+[0m17:16:57.339644 [info ] [MainThread]: Running with dbt=1.8.7
+[0m17:16:57.340160 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/tunguyenn99/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init dbt_youtube', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:57.344589 [info ] [MainThread]: A project called dbt_youtube already exists here.
+[0m17:16:57.345130 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.054068603, "process_user_time": 0.846247, "process_kernel_time": 0.049779, "process_mem_max_rss": "91960", "process_out_blocks": "16", "process_in_blocks": "0"}
+[0m17:16:57.345462 [debug] [MainThread]: Command `dbt init` succeeded at 17:16:57.345390 after 0.05 seconds
+[0m17:16:57.345713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0dc11ad2e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0dc04438e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0dbf84d1c0>]}
+[0m17:16:57.345962 [debug] [MainThread]: Flushing usage events

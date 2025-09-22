@@ -1,0 +1,23 @@
+dbt_youtube:
+  outputs:
+    dev:
+      account: sdxclvm-iq47862
+      database: YOUTUBE_DB
+      password: '!Tutempgmail01'
+      role: YOUTUBE_ROLE
+      schema: YOUTUBE_DEV_SCHEMA
+      threads: 1
+      type: snowflake
+      user: tutempgmail01
+      warehouse: YOUTUBE_WH
+    prod:
+      account: sdxclvm-iq47862
+      database: YOUTUBE_DB
+      password: '!Tutempgmail01'
+      role: YOUTUBE_ROLE
+      schema: YOUTUBE_PROD_SCHEMA
+      threads: 1
+      type: snowflake
+      user: tutempgmail01
+      warehouse: YOUTUBE_WH      
+  target: dev
