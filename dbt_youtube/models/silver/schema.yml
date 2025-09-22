@@ -1,0 +1,29 @@
+version: 2
+models:
+  - name: stg_channels
+    description: "Standardized channels"
+    columns:
+      - name: channel_id
+        tests: [unique, not_null]
+
+  - name: stg_playlists
+    description: "Standardized playlists"
+    columns:
+      - name: playlist_id
+        tests: [unique, not_null]
+      - name: channel_id
+        tests:
+          - relationships:
+              to: ref('stg_channels')
+              field: channel_id
+
+  - name: stg_videos
+    description: "Playlist items joined with video stats"
+    columns:
+      - name: video_id
+        tests: [not_null]
+      - name: playlist_id
+        tests:
+          - relationships:
+              to: ref('stg_playlists')
+              field: playlist_id

@@ -1,0 +1,4 @@
+snowflake_gmail=cha.imcl.ay.t.on0.60@gmail.com
+snowflake_account=https://sdxclvm-iq47862.snowflakecomputing.com
+user_name=tutempgmail01
+pass_word=!Tutempgmail01

@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: br_channels
+    description: "Raw channels from seed"
+    columns:
+      - name: channel_id
+        tests: [unique, not_null]
+
+  - name: br_playlists
+    description: "Raw playlists from seed"
+    columns:
+      - name: playlist_id
+        tests: [unique, not_null]
+      - name: channel_id
+        tests:
+          - relationships:
+              to: ref('br_channels')
+              field: channel_id
+
+  - name: br_playlist_items
+    description: "Raw playlist items from seed"
+    columns:
+      - name: playlist_item_id
+        tests: [unique, not_null]
+      - name: playlist_id
+        tests:
+          - relationships:
+              to: ref('br_playlists')
+              field: playlist_id
+
+  - name: br_video_stats
+    description: "Raw video stats from seed"
+    columns:
+      - name: video_id
+        tests: [unique, not_null]
