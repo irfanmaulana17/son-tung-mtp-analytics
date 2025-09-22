@@ -5,6 +5,7 @@ with v as (
     video_id
     , any_value(video_published_at) as "VIDEO_PUBLISHED_AT"
   from YOUTUBE_DB.YOUTUBE_DEV_SCHEMA.STG_VIDEOS
+  where video_published_at is not null
   group by video_id
 )
 select
