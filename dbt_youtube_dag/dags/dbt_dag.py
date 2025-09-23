@@ -48,7 +48,7 @@ with DAG(
 ) as dag:
 
 
-    # Step 1: SEEDS
+    # Step 1: seeds
     seeds = DbtTaskGroup(
         group_id="seeds",
         project_config=project_config,
