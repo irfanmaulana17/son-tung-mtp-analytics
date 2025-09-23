@@ -245,6 +245,35 @@ Xem ảnh trong thư mục [`imgs/`](./imgs)
 
 ---
 
+---
+
+## 📖 Documentation & References
+
+Trong quá trình xây dựng dự án, mình tham khảo và sử dụng các tài liệu chính thức sau:
+
+- **YouTube Data API v3**  
+  [https://developers.google.com/youtube/v3](https://developers.google.com/youtube/v3)
+
+- **Snowflake Documentation**  
+  [https://docs.snowflake.com](https://docs.snowflake.com)
+
+- **dbt Core Documentation**  
+  [https://docs.getdbt.com](https://docs.getdbt.com)
+
+- **dbt-utils Package**  
+  [https://hub.getdbt.com/dbt-labs/dbt_utils/latest](https://hub.getdbt.com/dbt-labs/dbt_utils/latest)
+
+- **Apache Airflow Documentation**  
+  [https://airflow.apache.org/docs](https://airflow.apache.org/docs)
+
+- **Astronomer Cosmos (dbt + Airflow)**  
+  [https://cosmos.astronomer.io](https://cosmos.astronomer.io)
+
+- **Power BI Documentation**  
+  [https://learn.microsoft.com/power-bi](https://learn.microsoft.com/power-bi)
+
+---
+
 ## 📜 License
 
 [MIT](/LICENSE)
