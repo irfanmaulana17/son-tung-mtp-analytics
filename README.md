@@ -203,7 +203,7 @@ UI: [http://localhost:8080](http://localhost:8080)
 
 ### 7. Dashboard Power BI
 
-Dưới đây là báo cáo lấy từ các bảng `gold`:
+Dưới đây là báo cáo lấy từ các bảng `gold`, xem link dashboard live [Ở ĐÂY!](https://app.powerbi.com/view?r=eyJrIjoiMzA3MGIyNTYtMjk2OC00NmJjLWExODUtNDhmYTM0YzdmZmM5IiwidCI6IjM3MGZiM2I4LTMzMDYtNDg5MC05MDYzLWNjMDhiZTc4ODI1NyIsImMiOjEwfQ%3D%3D)
 
 <img src="./imgs/06-pbi-dashboard.png" alt="Power BI Dashboard" width="800">
 
