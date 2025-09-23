@@ -1,0 +1,163 @@
+version: 2
+
+models:
+  # =========================
+  # GOLD: Channel Overview
+  # =========================
+  - name: g_channel_overview
+    description: "KPI tổng quan của kênh để hiển thị card/infographic."
+    columns:
+      - name: CHANNEL_ID
+        description: "ID kênh."
+        tests:
+          - not_null
+          - unique
+      - name: SUBSCRIBER_COUNT
+        description: "Tổng subscriber hiện tại."
+        tests:
+          - not_null
+      - name: CHANNEL_VIEW_COUNT
+        description: "Tổng lượt xem của kênh (từ metadata kênh)."
+        tests:
+          - not_null
+      - name: CHANNEL_VIDEO_COUNT
+        description: "Tổng số video của kênh (từ metadata kênh)."
+        tests:
+          - not_null
+      - name: AVG_VIDEO_LENGTH_SEC
+        description: "Độ dài trung bình (giây) của video."
+      - name: AVG_LIKE_PER_VIEW
+        description: "Tỷ lệ like trung bình trên mỗi view (mean of like/view)."
+      - name: AVG_COMMENT_PER_VIEW
+        description: "Tỷ lệ comment trung bình trên mỗi view (mean of comment/view)."
+
+  # =========================
+  # GOLD: Video Rankings
+  # =========================
+  - name: g_video_rankings
+    description: "Bảng xếp hạng video theo views, like_rate, comment_rate và độ mới."
+    columns:
+      - name: VIDEO_ID
+        description: "ID video (duy nhất mỗi dòng)."
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_videos')
+              field: video_id
+      - name: VIEW_COUNT
+        description: "Tổng view của video."
+        tests:
+          - not_null
+      - name: LIKE_COUNT
+        description: "Tổng like của video."
+        tests:
+          - not_null
+      - name: COMMENT_COUNT
+        description: "Tổng comment của video."
+        tests:
+          - not_null
+      - name: PUBLISHED_DATE
+        description: "Ngày đăng video."
+      - name: DURATION_SECONDS
+        description: "Độ dài video (giây)."
+
+  # =========================
+  # GOLD: Upload Heatmap (Weekday x Hour)
+  # =========================
+  - name: g_upload_heatmap
+    description: "Heatmap lịch đăng video theo thứ trong tuần và giờ."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [PUBLISHED_DOW, PUBLISHED_HOUR]
+    columns:
+      - name: PUBLISHED_DOW
+        description: "Thứ trong tuần (0=Chủ nhật ... 6=Thứ bảy)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0,1,2,3,4,5,6]
+      - name: PUBLISHED_HOUR
+        description: "Giờ trong ngày (0..23)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+      - name: VIDEOS_COUNT
+        description: "Số lượng video trong ô (dow, hour)."
+        tests:
+          - not_null
+
+  # =========================
+  # GOLD: Duration Distribution
+  # =========================
+  - name: g_duration_distribution
+    description: "Phân phối độ dài video theo bucket."
+    tests:
+      - unique:
+          column_name: DURATION_BUCKET
+    columns:
+      - name: DURATION_BUCKET
+        description: "Bucket độ dài: 0-1m, 1-5m, 5-15m, 15-30m, 30-60m, 60m+."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['0-1m','1-5m','5-15m','15-30m','30-60m','60m+']
+      - name: VIDEOS_COUNT
+        description: "Số video trong bucket."
+        tests:
+          - not_null
+      - name: AVG_DURATION_SEC
+        description: "Độ dài trung bình (giây) trong bucket."
+
+  # =========================
+  # GOLD: Playlist Performance
+  # =========================
+  - name: g_playlist_performance
+    description: "Tổng quan playlist và video top theo view trong từng playlist."
+    columns:
+      - name: PLAYLIST_ID
+        description: "ID playlist."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_playlists')
+              field: playlist_id
+      - name: ITEMS_DETECTED
+        description: "Số video thực tế phát hiện trong playlist."
+      - name: ITEM_COUNT_DECLARED
+        description: "Số video declared từ metadata (nếu có)."
+      - name: TOP_VIDEO_ID
+        description: "Video có lượt xem cao nhất trong playlist."
+        tests:
+          - relationships:
+              to: ref('stg_videos')
+              field: video_id
+      - name: TOP_VIDEO_VIEWS
+        description: "Lượt xem của video top trong playlist."
+
+  # =========================
+  # GOLD: Content Mix
+  # =========================
+  - name: g_content_mix
+    description: "Cơ cấu loại nội dung (Shorts/Live/Normal/Private) và hiệu suất trung bình."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [VIDEO_TYPE]
+    columns:
+      - name: VIDEO_TYPE
+        description: "Phân loại nội dung: Shorts, Live, Normal videos, Private videos."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Shorts','Live','Normal videos','Private videos']
+      - name: VIDEOS_COUNT
+        description: "Số lượng video của từng loại."
+        tests:
+          - not_null
+      - name: TOTAL_VIEWS
+        description: "Tổng lượt xem của từng loại."
+      - name: AVG_LIKE_PER_VIEW
+        description: "Tỷ lệ like trung bình trên view của từng loại."
+      - name: AVG_COMMENT_PER_VIEW
+        description: "Tỷ lệ comment trung bình trên view của từng loại."
