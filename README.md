@@ -175,12 +175,8 @@ astro dev init
 Trong `requirements.txt`:
 
 ```
-apache-airflow==2.9.3
+astronomer-cosmos
 apache-airflow-providers-snowflake
-astronomer-cosmos>=1.3
-dbt-core
-dbt-snowflake
-python-dotenv
 ```
 
 Khởi động Airflow:
